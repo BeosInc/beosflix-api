@@ -2,10 +2,6 @@ import axios from "axios";
 import express from "express";
 import serverless from "serverless-http";
 
-const api = express();
-
-const router = Router();
-
 const app = express();
 
 const getMovie = async (firstLetter, searchQuery) => {
