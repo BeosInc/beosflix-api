@@ -34,9 +34,9 @@ app.get("/movie/:firstLetter/:searchQuery", async (req, res) => {
 });
 
 // Add a root route for testing
-router.get("/", (req, res) => {
+app.get("/", (req, res) => {
   res.json({ message: "Movie Search API is running" });
 });
 
-app.use("./netlify/functions/api", router);
+app.use("./netlify/functions/api ", app);
 module.exports.handler = serverless(app);
