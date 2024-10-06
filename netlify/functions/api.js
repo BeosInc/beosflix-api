@@ -1,6 +1,8 @@
 import axios from "axios";
-import express from "express";
+import express, { Router } from "express";
 import serverless from "serverless-http";
+
+const router = Router();
 
 const app = express();
 
@@ -32,7 +34,7 @@ app.get("/movie/:firstLetter/:searchQuery", async (req, res) => {
 });
 
 // Add a root route for testing
-app.get("/", (req, res) => {
+router.get("/", (req, res) => {
   res.json({ message: "Movie Search API is running" });
 });
 
