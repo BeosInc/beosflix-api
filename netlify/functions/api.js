@@ -38,4 +38,5 @@ router.get("/", (req, res) => {
   res.json({ message: "Movie Search API is running" });
 });
 
+app.use("./netlify/functions/api", router);
 module.exports.handler = serverless(app);
